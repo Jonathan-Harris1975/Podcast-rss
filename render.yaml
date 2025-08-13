@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: podcast-rss-generator
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATA_DIR
+        value: /opt/render/project/src/data
+    disk:
+      name: podcast-data
+      mountPath: /opt/render/project/src/data
+      sizeGB: 1
+

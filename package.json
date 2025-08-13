@@ -1,0 +1,21 @@
+{
+  "name": "podcast-rss-generator",
+  "version": "1.0.0",
+  "description": "RSS generator for podcast feeds",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "docker-build": "docker build -f Dockerfile -t podcast-rss .",
+    "docker-run": "docker-compose up -d",
+    "docker-stop": "docker-compose down"
+  },
+  "dependencies": {
+    "rss": "^1.2.2",
+    "express": "^4.18.2",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "curl": "^0.1.4"
+  }
+}
